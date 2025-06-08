@@ -1,0 +1,315 @@
+/* General Styling */
+:root {
+    --primary-color: #e74c3c; /* Attractive Red for CTA */
+    --secondary-color: #3498db; /* Appealing Blue for backgrounds */
+    --text-color: #34495e; /* Dark text for readability */
+    --light-bg: #ecf0f1; /* Light background */
+    --dark-bg: #2c3e50; /* Dark background for footer and headings */
+    --button-hover: #c0392b; /* Button hover color */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern and clean font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: var(--text-color);
+    direction: ltr; /* Left-to-right for English */
+    text-align: left; /* Left-aligned for English */
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--dark-bg);
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.btn .icon {
+    font-size: 1.6em;
+}
+
+/* Pulse effect for CTA button */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    line-height: 1.2;
+}
+
+.hero-section .subtitle {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* Main Image style */
+.main-image {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block; /* Ensure it behaves as a block element for margin auto to work */
+    height: auto;
+    filter: brightness(0.9); /* Slightly darker for better text contrast */
+}
+
+
+.cta-text {
+    font-size: 1.8em;
+    font-weight: 600; /* Slightly less bold than headline */
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.disclaimer {
+    display: block;
+    margin-top: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #f1c40f;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Benefits Section */
+.benefits-section {
+    background-color: var(--light-bg);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: left; /* Left-aligned for English */
+    border-left: 6px solid var(--secondary-color); /* Left border for English */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.benefit-item h3 {
+    color: var(--dark-bg);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.benefit-item p {
+    font-size: 1.1em;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background-color: var(--primary-color); Remove background if image has its own style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #fff;
+    flex-shrink: 0;
+    object-fit: cover; /* Ensure image fits */
+}
+
+/* New Action Prompt Section */
+.action-prompt-section {
+    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Green gradient for positivity */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.action-prompt-section h2 {
+    color: #fff;
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.action-prompt-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+
+.bottom-cta {
+    background-color: var(--dark-bg);
+    font-size: 1.5em;
+    padding: 20px 40px;
+}
+
+.bottom-cta:hover {
+    background-color: #000;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: #bbb;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-section .subtitle,
+    .cta-text {
+        font-size: 1.3em;
+    }
+
+    .btn {
+        font-size: 1.2em;
+        padding: 15px 25px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-section h2,
+    .action-prompt-section h2 {
+        font-size: 2.5em;
+    }
+
+    .action-prompt-section p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section .subtitle,
+    .cta-text {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        width: 90%;
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+
+    .benefits-section h2,
+    .action-prompt-section h2 {
+        font-size: 2em;
+    }
+}
+```
+
+---
